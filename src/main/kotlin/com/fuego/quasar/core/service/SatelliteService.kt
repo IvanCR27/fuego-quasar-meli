@@ -30,12 +30,13 @@ class SatelliteService {
 
         val satelliteSearh = repository.findByName(satelliteName)
 
-        if (satelliteName != null) {
-            satelliteSearh.name = satelliteName
-            satelliteSearh.distance = request.distance
-            satelliteSearh.message = request.message.joinToString(separator = ",")
+        if (satelliteSearh.isPresent) {
+            val satelliteUpdate = satelliteSearh.get()
+            satelliteUpdate.name = satelliteName
+            satelliteUpdate.distance = request.distance
+            satelliteUpdate.message = request.message.joinToString(separator = ",")
 
-            repository.save(satelliteSearh)
+            repository.save(satelliteUpdate)
         } else {
             val satelliteNew = SatelliteEntity(
                 name = satelliteName,
