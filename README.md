@@ -5,6 +5,8 @@ Challenge fuego de quasar MELI
 - Spring Framework and Spring Boot
 - Gradle
 - Postgres
+- Kotlin
+- Flyway
 
 ## Build
 
@@ -12,9 +14,23 @@ Challenge fuego de quasar MELI
 Para correr en local 
 ```-Dspring.profiles.active=local```
 
+######Servicios
+
+- Top secret POST: localhost:8080/communication/topsecret
+- Top secret split POST: localhost:8080/communication/topsecret_split/{satellite_name}
+- Top secret GET: localhost:8080/communication/topsecret_split
+
+##### DEV
+
+######Servicios
+
+- Top secret POST: https://fuego-quasar-meli.uc.r.appspot.com/communication/topsecret
+- Top secret split POST: https://fuego-quasar-meli.uc.r.appspot.com/communication/topsecret_split/{satellite_name}
+- Top secret GET: https://fuego-quasar-meli.uc.r.appspot.com/communication/topsecret_split
+
 ##### TEST
 Para correr las pruebas unitarias correr el comando
-```a```
+```test --tests * jacocoRootReport```
 
 Database
 
